@@ -1,0 +1,16 @@
+/*flex wrap is the one who makes this layout to be possible*/
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+}
+
+/*createelement div style to be able to see*/
+.container div {
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 50px;
+}
