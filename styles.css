@@ -1,16 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+body {
+    padding: 10px;
+    background-color: grey; 
+    display: flex;
+    justify-content: center;
+}
+
 /*flex wrap is the one who makes this layout to be possible*/
 .container {
     display: flex;
     flex-wrap: wrap;
-    width: 50%;
+    width: 640px;
+    background-color: white;
 }
 
 /*createelement div style to be able to see*/
 .container div {
+    flex-shrink: 1;
+    flex-basis: 40px;
     width: 40px;
     height: 40px;
     border: 1px solid black;
     box-sizing: border-box;
     text-align: center;
-    line-height: 50px;
+    line-height: auto;
 }
