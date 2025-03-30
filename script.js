@@ -17,5 +17,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // after above, querySelectorAll() and forEach
+    const quadrados = document.querySelectorAll(".container div");
+
+    quadrados.forEach((quadrado) => {
+        quadrado.addEventListener(
+            "mouseover",
+            (event) => {
+                // highlight the mouseover target
+                event.target.style.backgroundColor = "orange";
+          
+                // reset the color after a short delay
+                setTimeout(() => {
+                    event.target.style.backgroundColor = "";
+                }, 500);
+            },
+            false
+        );
+    });
 
 })
+
