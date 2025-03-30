@@ -35,5 +35,15 @@ document.addEventListener("DOMContentLoaded", () => {
         );
     });
 
+    //ao clicar no botao, pedir ao usuario input para o novo grid, depois remover o atual e gerar o novo, 
+    const resetButton = document.querySelector(".reset");
+    resetButton.addEventListener("click", function() {
+        const paraRemover = document.querySelectorAll(".container div");
+        paraRemover.forEach((div) => {
+            div.remove();
+        })
+
+    });
+
 })
 
