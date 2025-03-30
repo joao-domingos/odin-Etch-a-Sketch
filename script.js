@@ -37,12 +37,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //ao clicar no botao, pedir ao usuario input para o novo grid, depois remover o atual e gerar o novo, 
     const resetButton = document.querySelector(".reset");
+    const modal = document.querySelector("dialog");
     resetButton.addEventListener("click", function() {
         const paraRemover = document.querySelectorAll(".container div");
         paraRemover.forEach((div) => {
             div.remove();
         })
-
+        let numeroQuadrados = prompt("qual a quantidade de quadrados por lado?");
+        while (isNaN(numeroQuadrados)
+            || numeroQuadrados < 0
+            || numeroQuadrados > 100
+        ) {
+            numeroQuadrados = prompt("insira um numero valido");
+        }
     });
 
 })
