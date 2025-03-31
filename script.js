@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
             container.appendChild(createDiv);
         }
     }
+    pintar();
 
     //ao clicar no botao, pedir ao usuario input para o novo grid, depois remover o atual e gerar o novo, 
     const resetButton = document.querySelector(".reset");
@@ -46,22 +47,19 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         pintar();
     });
-
-    pintar();
+    function pintar() {
+        // after above, querySelectorAll() and forEach
+        const quadrados = document.querySelectorAll(".container div");
+ 
+        quadrados.forEach((quadrado) => {
+            quadrado.addEventListener(
+                "mouseover",
+                (event) => {
+                    // highlight the mouseover target
+                    event.target.style.backgroundColor = "black";
+                },
+                false
+            );
+        });
+ }
 })
-
-function pintar() {
-       // after above, querySelectorAll() and forEach
-       const quadrados = document.querySelectorAll(".container div");
-
-       quadrados.forEach((quadrado) => {
-           quadrado.addEventListener(
-               "mouseover",
-               (event) => {
-                   // highlight the mouseover target
-                   event.target.style.backgroundColor = "black";
-               },
-               false
-           );
-       });
-}
