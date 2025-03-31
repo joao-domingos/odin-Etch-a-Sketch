@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
     for (let i = 0; i < 16; i++) {
         for (let j = 0; j < 16; j++) {
             const createDiv = document.createElement("div");
-            createDiv.textContent = i;
             container.appendChild(createDiv);
         }
     }
@@ -34,15 +33,16 @@ document.addEventListener("DOMContentLoaded", () => {
         for (let i = 0; i < numeroQuadrados; i++) {
             for (let j = 0; j < numeroQuadrados; j++) {
                 const createDiv = document.createElement("div");
-                createDiv.textContent = i;
                 container.appendChild(createDiv);
             }
         }
         let tamanhoQuadrados = document.querySelectorAll(".container div");
         let auxPorcentagem = (100 / numeroQuadrados) + '%';
+        let auxPadding = 100 / numeroQuadrados;
         console.log(auxPorcentagem);
         tamanhoQuadrados.forEach((quadrado) => {
             quadrado.style.width = auxPorcentagem;
+            quadrado.style.padding = auxPadding;
         });
         pintar();
     });
@@ -59,12 +59,7 @@ function pintar() {
                "mouseover",
                (event) => {
                    // highlight the mouseover target
-                   event.target.style.backgroundColor = "orange";
-             
-                   // reset the color after a short delay
-                   setTimeout(() => {
-                       event.target.style.backgroundColor = "";
-                   }, 500);
+                   event.target.style.backgroundColor = "black";
                },
                false
            );
